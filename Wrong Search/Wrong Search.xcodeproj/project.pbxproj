@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C58990B61E27912800B27FEE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990B51E27912800B27FEE /* HomeViewController.swift */; };
+		C58990B81E27913E00B27FEE /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990B71E27913E00B27FEE /* HowToViewController.swift */; };
+		C58990BA1E27914B00B27FEE /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990B91E27914B00B27FEE /* PlayViewController.swift */; };
+		C58990BC1E27915700B27FEE /* HintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990BB1E27915700B27FEE /* HintViewController.swift */; };
+		C58990BE1E27916600B27FEE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990BD1E27916600B27FEE /* ResultViewController.swift */; };
+		C58990C81E27983900B27FEE /* スクリーンショット 2016-12-15 20.13.12.png in Resources */ = {isa = PBXBuildFile; fileRef = C58990C01E27983900B27FEE /* スクリーンショット 2016-12-15 20.13.12.png */; };
+		C58990C91E27983900B27FEE /* スクリーンショット 2016-12-20 14.30.08.png in Resources */ = {isa = PBXBuildFile; fileRef = C58990C11E27983900B27FEE /* スクリーンショット 2016-12-20 14.30.08.png */; };
+		C58990CA1E27983900B27FEE /* 指のマーク.ai in Resources */ = {isa = PBXBuildFile; fileRef = C58990C21E27983900B27FEE /* 指のマーク.ai */; };
+		C58990CB1E27983900B27FEE /* 指のマーク.png in Resources */ = {isa = PBXBuildFile; fileRef = C58990C31E27983900B27FEE /* 指のマーク.png */; };
+		C58990CC1E27983900B27FEE /* 矢印.ai in Resources */ = {isa = PBXBuildFile; fileRef = C58990C41E27983900B27FEE /* 矢印.ai */; };
+		C58990CD1E27983900B27FEE /* 矢印.png in Resources */ = {isa = PBXBuildFile; fileRef = C58990C51E27983900B27FEE /* 矢印.png */; };
+		C58990CE1E27983900B27FEE /* 背表紙.ai in Resources */ = {isa = PBXBuildFile; fileRef = C58990C61E27983900B27FEE /* 背表紙.ai */; };
+		C58990CF1E27983900B27FEE /* 背表紙.png in Resources */ = {isa = PBXBuildFile; fileRef = C58990C71E27983900B27FEE /* 背表紙.png */; };
 		C5BBDCE91E1F12F700199D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BBDCE81E1F12F700199D30 /* AppDelegate.swift */; };
 		C5BBDCEB1E1F12F700199D30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BBDCEA1E1F12F700199D30 /* ViewController.swift */; };
 		C5BBDCEE1E1F12F700199D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BBDCEC1E1F12F700199D30 /* Main.storyboard */; };
@@ -34,6 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C58990B51E27912800B27FEE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C58990B71E27913E00B27FEE /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
+		C58990B91E27914B00B27FEE /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		C58990BB1E27915700B27FEE /* HintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintViewController.swift; sourceTree = "<group>"; };
+		C58990BD1E27916600B27FEE /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C58990C01E27983900B27FEE /* スクリーンショット 2016-12-15 20.13.12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2016-12-15 20.13.12.png"; sourceTree = "<group>"; };
+		C58990C11E27983900B27FEE /* スクリーンショット 2016-12-20 14.30.08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2016-12-20 14.30.08.png"; sourceTree = "<group>"; };
+		C58990C21E27983900B27FEE /* 指のマーク.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "指のマーク.ai"; sourceTree = "<group>"; };
+		C58990C31E27983900B27FEE /* 指のマーク.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "指のマーク.png"; sourceTree = "<group>"; };
+		C58990C41E27983900B27FEE /* 矢印.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "矢印.ai"; sourceTree = "<group>"; };
+		C58990C51E27983900B27FEE /* 矢印.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "矢印.png"; sourceTree = "<group>"; };
+		C58990C61E27983900B27FEE /* 背表紙.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "背表紙.ai"; sourceTree = "<group>"; };
+		C58990C71E27983900B27FEE /* 背表紙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背表紙.png"; sourceTree = "<group>"; };
 		C5BBDCE51E1F12F700199D30 /* Wrong Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wrong Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BBDCE81E1F12F700199D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5BBDCEA1E1F12F700199D30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +100,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C58990BF1E27983900B27FEE /* 道具 */ = {
+			isa = PBXGroup;
+			children = (
+				C58990C01E27983900B27FEE /* スクリーンショット 2016-12-15 20.13.12.png */,
+				C58990C11E27983900B27FEE /* スクリーンショット 2016-12-20 14.30.08.png */,
+				C58990C21E27983900B27FEE /* 指のマーク.ai */,
+				C58990C31E27983900B27FEE /* 指のマーク.png */,
+				C58990C41E27983900B27FEE /* 矢印.ai */,
+				C58990C51E27983900B27FEE /* 矢印.png */,
+				C58990C61E27983900B27FEE /* 背表紙.ai */,
+				C58990C71E27983900B27FEE /* 背表紙.png */,
+			);
+			path = "道具";
+			sourceTree = "<group>";
+		};
 		C5BBDCDC1E1F12F700199D30 = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +138,13 @@
 		C5BBDCE71E1F12F700199D30 /* Wrong Search */ = {
 			isa = PBXGroup;
 			children = (
+				C58990BF1E27983900B27FEE /* 道具 */,
 				C5BBDCE81E1F12F700199D30 /* AppDelegate.swift */,
+				C58990B51E27912800B27FEE /* HomeViewController.swift */,
+				C58990B91E27914B00B27FEE /* PlayViewController.swift */,
+				C58990B71E27913E00B27FEE /* HowToViewController.swift */,
+				C58990BB1E27915700B27FEE /* HintViewController.swift */,
+				C58990BD1E27916600B27FEE /* ResultViewController.swift */,
 				C5BBDCEA1E1F12F700199D30 /* ViewController.swift */,
 				C5BBDCEC1E1F12F700199D30 /* Main.storyboard */,
 				C5BBDCEF1E1F12F700199D30 /* Assets.xcassets */,
@@ -232,9 +279,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58990CA1E27983900B27FEE /* 指のマーク.ai in Resources */,
 				C5BBDCF31E1F12F700199D30 /* LaunchScreen.storyboard in Resources */,
+				C58990C81E27983900B27FEE /* スクリーンショット 2016-12-15 20.13.12.png in Resources */,
 				C5BBDCF01E1F12F700199D30 /* Assets.xcassets in Resources */,
+				C58990C91E27983900B27FEE /* スクリーンショット 2016-12-20 14.30.08.png in Resources */,
+				C58990CF1E27983900B27FEE /* 背表紙.png in Resources */,
+				C58990CE1E27983900B27FEE /* 背表紙.ai in Resources */,
+				C58990CB1E27983900B27FEE /* 指のマーク.png in Resources */,
 				C5BBDCEE1E1F12F700199D30 /* Main.storyboard in Resources */,
+				C58990CC1E27983900B27FEE /* 矢印.ai in Resources */,
+				C58990CD1E27983900B27FEE /* 矢印.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58990B81E27913E00B27FEE /* HowToViewController.swift in Sources */,
+				C58990BC1E27915700B27FEE /* HintViewController.swift in Sources */,
+				C58990BE1E27916600B27FEE /* ResultViewController.swift in Sources */,
+				C58990BA1E27914B00B27FEE /* PlayViewController.swift in Sources */,
 				C5BBDCEB1E1F12F700199D30 /* ViewController.swift in Sources */,
 				C5BBDCE91E1F12F700199D30 /* AppDelegate.swift in Sources */,
+				C58990B61E27912800B27FEE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +565,7 @@
 				C5BBDD0F1E1F12F700199D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5BBDD101E1F12F700199D30 /* Build configuration list for PBXNativeTarget "Wrong SearchTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +574,7 @@
 				C5BBDD121E1F12F700199D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5BBDD131E1F12F700199D30 /* Build configuration list for PBXNativeTarget "Wrong SearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +583,7 @@
 				C5BBDD151E1F12F700199D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
