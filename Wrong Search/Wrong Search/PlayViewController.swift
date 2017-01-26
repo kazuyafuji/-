@@ -19,20 +19,31 @@ class PlayViewController: UIViewController {
     
     //わからん！！！！
     override func viewWillAppear(_ animated: Bool) {
+        
+        //タイマーが止まっている時
         if !timer.isValid {
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
-            
+            timer.fire()
         }
         
-        if finish == false {
-            timer.invalidate()
-        } else if finish == true {
+        //結果画面から戻ってきた時のみ
+        if finish == true {
             timer.invalidate()
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
             count = 0.0
-            second.text = "0.0"
-            finish = false
+            finish = false  //もう一度やる時のために戻しておく
         }
+    }
+    
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResult" {
+            let resultViewController: ResultViewController = segue.destination as! ResultViewController
+            print(second.text)
+            resultViewController.sendText = self.second.text!
+        }
+
     }
     
     override func viewDidLoad() {
@@ -54,20 +65,15 @@ class PlayViewController: UIViewController {
     }
     
     @IBAction func toHint() {
-        let hintViewController :HintViewController = self.storyboard?.instantiateViewController(withIdentifier: "Hint") as! HintViewController
-        self.navigationController?.pushViewController(hintViewController, animated: true)
-        
-        if timer.isValid == true {
-            timer.invalidate()
-        }
-        
-        finish = false
+        performSegue(withIdentifier: "toHint", sender: nil)
+        timer.invalidate()
     }
     
     @IBAction func toResult() {
-        let resultViewController :ResultViewController = self.storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
-        self.navigationController?.pushViewController(resultViewController, animated: true)
+         performSegue(withIdentifier: "toResult", sender: nil)
         
+        //タイマーを止めて、finishをtrue
+        timer.invalidate()
         finish = true
     }
     

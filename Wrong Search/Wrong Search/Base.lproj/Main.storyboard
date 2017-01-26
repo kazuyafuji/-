@@ -92,7 +92,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="答え"/>
                                 <connections>
-                                    <segue destination="Hyn-ro-XPy" kind="show" id="Q4b-ov-DAR"/>
+                                    <action selector="toResult" destination="Opp-Yz-LI9" eventType="touchUpInside" id="YnD-BR-O1w"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="第1問" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-Us-iC5">
@@ -114,6 +114,8 @@
                     </view>
                     <connections>
                         <outlet property="second" destination="7eg-2V-JId" id="i8X-MY-cqv"/>
+                        <segue destination="Hyn-ro-XPy" kind="show" identifier="toResult" id="hmu-qX-ENR"/>
+                        <segue destination="DRt-Tp-hS8" kind="show" identifier="toHint" id="aWo-sd-cs0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1f-F8-bB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
