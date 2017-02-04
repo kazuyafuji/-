@@ -10,14 +10,18 @@ import UIKit
 
 class PlayViewController: UIViewController {
     
+    //viewの入れ子の作成
+    @IBOutlet var setView : UIView!
+    
     @IBOutlet var second: UILabel!
     
+    var number: Int!
     var count: Float = 0.0
     var timer: Timer = Timer()
     var finish: Bool = false
     
     
-    //わからん！！！！
+    
     override func viewWillAppear(_ animated: Bool) {
         
         //タイマーが止まっている時
@@ -33,17 +37,49 @@ class PlayViewController: UIViewController {
             count = 0.0
             finish = false  //もう一度やる時のために戻しておく
         }
+        
+        //ボタンを複数個設置
+        number = Int(arc4random_uniform(9))
+        
+        for n in 0...2 {
+            
+            //for文の入れ子
+            for i in 0...2 {
+                
+                let button = UIButton()
+                button.layer.anchorPoint = CGPoint.zero
+                button.frame = CGRect(x: 0,y: 0, width: 100, height: 100)
+                button.layer.position = CGPoint(x: 100*i, y: 100*n)
+                button.tag = n + i*3
+                self.setView.addSubview(button)
+                
+                let tag: Int = button.tag
+                
+                if tag == number {
+                    button.setTitle("大", for: .normal)
+                    button.setTitleColor(UIColor.black, for: .normal)
+                    button.addTarget(self, action: #selector(PlayViewController.answerTapped), for:.touchUpInside)
+                    
+                } else {
+                    button.setTitle("犬", for: .normal)
+                    button.setTitleColor(UIColor.black, for: .normal)
+                    button.addTarget(self, action: #selector(PlayViewController.wrongTapped), for:.touchUpInside)
+                    
+                }
+            }
+        }
+        
     }
     
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResult" {
             let resultViewController: ResultViewController = segue.destination as! ResultViewController
-            print(second.text)
+            print(second.text as Any)
             resultViewController.sendText = self.second.text!
         }
-
+        
     }
     
     override func viewDidLoad() {
@@ -69,12 +105,45 @@ class PlayViewController: UIViewController {
         timer.invalidate()
     }
     
-    @IBAction func toResult() {
-         performSegue(withIdentifier: "toResult", sender: nil)
+    func answerTapped() {
+        //結果画面へ移動
+        performSegue(withIdentifier: "toResult", sender: nil)
         
-        //タイマーを止めて、finishをtrue
+        //タイマーを止めてfinishをtrue
         timer.invalidate()
         finish = true
+        
+    }
+    
+    func wrongTapped() {
+        timer.invalidate()
+        finish = false
+        
+        //間違いのアラートを表示
+        let alert:UIAlertController = UIAlertController(title: "不正解", message: "もう一度!", preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "OK", style: UIAlertActionStyle.default,
+                          handler: { action in
+                           _ = self.dismiss(animated: true, completion: nil)
+                           self.timer.fire()
+                            
+            }
+                
+            )
+            
+        )
+        alert.addAction(
+            UIAlertAction(title: "ヒントへ", style: UIAlertActionStyle.default,
+                          handler: { action in
+                            self.performSegue(withIdentifier: "toHint", sender: nil)
+            }
+            )
+            
+            
+            
+        )
+        present(alert, animated: true, completion:  nil)
+        
     }
     
     

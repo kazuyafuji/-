@@ -78,21 +78,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrw-If-0hN">
-                                <rect key="frame" x="121" y="550" width="133" height="59"/>
+                                <rect key="frame" x="121" y="552" width="133" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="ヒント"/>
                                 <connections>
                                     <action selector="toHint" destination="Opp-Yz-LI9" eventType="touchUpInside" id="Dcx-c0-Rrh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTk-SL-vqG">
-                                <rect key="frame" x="226" y="290" width="68" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="答え"/>
-                                <connections>
-                                    <action selector="toResult" destination="Opp-Yz-LI9" eventType="touchUpInside" id="YnD-BR-O1w"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="第1問" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAk-Us-iC5">
@@ -109,13 +100,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NiA-8X-jm0">
+                                <rect key="frame" x="37" y="227" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="second" destination="7eg-2V-JId" id="i8X-MY-cqv"/>
-                        <segue destination="Hyn-ro-XPy" kind="show" identifier="toResult" id="hmu-qX-ENR"/>
+                        <outlet property="setView" destination="NiA-8X-jm0" id="9rf-TT-gUi"/>
                         <segue destination="DRt-Tp-hS8" kind="show" identifier="toHint" id="aWo-sd-cs0"/>
+                        <segue destination="Hyn-ro-XPy" kind="show" identifier="toResult" id="Lez-O7-9BH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1f-F8-bB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,7 +174,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="天才レベル！！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-Mt-BYA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="メモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-Mt-BYA">
                                 <rect key="frame" x="76" y="273" width="223" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
