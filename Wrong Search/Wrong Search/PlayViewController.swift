@@ -19,8 +19,8 @@ class PlayViewController: UIViewController {
     var count: Float = 0.0
     var timer: Timer = Timer()
     var finish: Bool = false
-    
-    
+    var lastNumber :Int = 10
+    var countProblem :Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -40,6 +40,7 @@ class PlayViewController: UIViewController {
         
         //ボタンを複数個設置
         number = Int(arc4random_uniform(9))
+        NSLog("numberの値は%dです", number)
         
         for n in 0...2 {
             
@@ -50,7 +51,7 @@ class PlayViewController: UIViewController {
                 button.layer.anchorPoint = CGPoint.zero
                 button.frame = CGRect(x: 0,y: 0, width: 100, height: 100)
                 button.layer.position = CGPoint(x: 100*i, y: 100*n)
-                button.tag = n + i*3
+                button.tag = i + n*3
                 self.setView.addSubview(button)
                 
                 let tag: Int = button.tag
@@ -106,12 +107,23 @@ class PlayViewController: UIViewController {
     }
     
     func answerTapped() {
+        //ボタンを一度消す
+        let subviews = setView.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+        
         //結果画面へ移動
-        performSegue(withIdentifier: "toResult", sender: nil)
+        if countProblem > 10 {
+            performSegue(withIdentifier: "toResult", sender: nil)
+            countProblem = 0
+        }
         
         //タイマーを止めてfinishをtrue
         timer.invalidate()
         finish = true
+        
+        countProblem = countProblem + 1
         
     }
     
@@ -120,12 +132,13 @@ class PlayViewController: UIViewController {
         finish = false
         
         //間違いのアラートを表示
-        let alert:UIAlertController = UIAlertController(title: "不正解", message: "もう一度!", preferredStyle: .alert)
+        let alert:UIAlertController = UIAlertController(title: "不正解", message: "", preferredStyle: .alert)
         alert.addAction(
-            UIAlertAction(title: "OK", style: UIAlertActionStyle.default,
+            UIAlertAction(title: "続ける", style: UIAlertActionStyle.default,
                           handler: { action in
-                           _ = self.dismiss(animated: true, completion: nil)
-                           self.timer.fire()
+                            _ = self.dismiss(animated: true, completion: nil)
+                            self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
+                            
                             
             }
                 
@@ -143,6 +156,8 @@ class PlayViewController: UIViewController {
             
         )
         present(alert, animated: true, completion:  nil)
+        
+        
         
     }
     
