@@ -11,7 +11,7 @@ import UIKit
 class ResultViewController: UIViewController {
     
     @IBOutlet var onemore: UIButton!
-    @IBOutlet var home:UIButton!
+    @IBOutlet var toHome:UIButton!
     
     @IBOutlet var resultSecond: UILabel!
     @IBOutlet var resultLevel: UILabel!
@@ -28,16 +28,16 @@ class ResultViewController: UIViewController {
         resultSecond.text = text
         let sendtext = Double(sendText)!
         
-        if sendtext <= 120.0 {
+        if sendtext <= 20.00 {
             resultLevel.text = "Sランク！！"
             resultMemo.text = "すごすぎる！神様レベル！"
-        } else if sendtext <= 150.0 {
+        } else if sendtext <= 30.00 {
             resultLevel.text = "Aランク!"
             resultMemo.text = "天才！"
-        } else if sendtext <= 200.0 {
+        } else if sendtext <= 45.00 {
             resultLevel.text = "Bランク"
             resultMemo.text = "Aランクまであとすこしがんばろう！"
-        } else if sendtext > 200.0 {
+        } else if sendtext > 60.00 {
             resultLevel.text = "Cランク..."
             resultMemo.text = "Bランク目指して頑張ろう!"
         }
@@ -45,9 +45,9 @@ class ResultViewController: UIViewController {
         onemore.layer.borderColor = UIColor.black.cgColor
         onemore.layer.borderWidth = 1.0
         onemore.layer.cornerRadius = 15
-        home.layer.borderColor = UIColor.black.cgColor
-        home.layer.borderWidth = 1.0
-        home.layer.cornerRadius = 15
+        toHome.layer.borderColor = UIColor.black.cgColor
+        toHome.layer.borderWidth = 1.0
+        toHome.layer.cornerRadius = 15
 
         
         // Do any additional setup after loading the view.

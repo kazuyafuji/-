@@ -102,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrw-If-0hN">
-                                <rect key="frame" x="121" y="526" width="160" height="47"/>
+                                <rect key="frame" x="107" y="526" width="160" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
                                 <state key="normal" title="ヒント">
@@ -206,11 +206,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="home" destination="Uit-AU-p8N" id="p4F-9A-257"/>
                         <outlet property="onemore" destination="x49-YL-qlq" id="RPJ-zG-Qgj"/>
                         <outlet property="resultLevel" destination="i8N-zq-HYs" id="X5x-ht-6Uc"/>
                         <outlet property="resultMemo" destination="gEK-Mt-BYA" id="nzP-Z5-cBM"/>
                         <outlet property="resultSecond" destination="pDB-eH-H72" id="cJs-At-CPv"/>
+                        <outlet property="toHome" destination="Uit-AU-p8N" id="PQZ-EN-g2k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvo-dk-ymu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,11 +323,26 @@
                                     <action selector="home" destination="4yd-3h-63M" eventType="touchUpInside" id="fgj-uS-WDV"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-cF-heU">
+                                <rect key="frame" x="44" y="82" width="287" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="広告" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0k-O5-UQY">
+                                <rect key="frame" x="53" y="247" width="268" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="backback" destination="HLG-wD-aHM" id="oHF-Yy-wpM"/>
+                        <outlet property="textView" destination="hyk-cF-heU" id="RLb-7w-YO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZG-BQ-A1d" userLabel="First Responder" sceneMemberID="firstResponder"/>

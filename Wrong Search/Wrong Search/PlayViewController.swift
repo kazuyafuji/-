@@ -25,8 +25,8 @@ class PlayViewController: UIViewController {
     var finish: Bool = false
     var lastNumber :Int = 10
     var countProblem :Int = 0
-    var wrongArray: [String] = ["犬","成","木","墨","日","竿","飲","両","面","八"]
-    var correctArray: [String] = ["大","城","禾","黒","田","干","飾","内","雨","入"]
+    var wrongArray: [String] = ["日","竿","木","犬","両","成","飲","墨","面","人"]
+    var correctArray: [String] = ["田","干","禾","大","内","城","飾","黒","雨","入"]
     var hint :Bool = false
     
     
@@ -62,7 +62,7 @@ class PlayViewController: UIViewController {
         toHints.layer.borderColor = UIColor.black.cgColor
         toHints.layer.borderWidth = 1.0
         toHints.layer.cornerRadius = 15
-
+        
         
     }
     
@@ -73,6 +73,10 @@ class PlayViewController: UIViewController {
             let resultViewController: ResultViewController = segue.destination as! ResultViewController
             print(second.text as Any)
             resultViewController.sendText = self.second.text!
+        } else if segue.identifier == "toHint" {
+            let hintViewController: HintViewController = segue.destination as! HintViewController
+            print(String(countProblem) as Any)
+            hintViewController.sendProblem = String (countProblem)
         }
         
     }
@@ -131,8 +135,8 @@ class PlayViewController: UIViewController {
             
         }
         
-       
-
+        
+        
     }
     
     func wrongTapped() {
@@ -173,19 +177,19 @@ class PlayViewController: UIViewController {
     
     func addButton() {
         //ボタンを複数個設置
-        number = Int(arc4random_uniform(9))
+        number = Int(arc4random_uniform(36))
         NSLog("numberの値は%dです", number)
         
-        for n in 0...2 {
+        for n in 0...5 {
             
             //for文の入れ子
-            for i in 0...2 {
+            for i in 0...5 {
                 
                 let button = UIButton()
                 button.layer.anchorPoint = CGPoint.zero
-                button.frame = CGRect(x: 0,y: 0, width: 100, height: 100)
-                button.layer.position = CGPoint(x: 100*i, y: 100*n)
-                button.tag = i + n*3
+                button.frame = CGRect(x: 0,y: 0, width: 40, height: 40)
+                button.layer.position = CGPoint(x: 50*i, y: 50*n)
+                button.tag = i + n*6
                 self.setView.addSubview(button)
                 
                 let tag: Int = button.tag
