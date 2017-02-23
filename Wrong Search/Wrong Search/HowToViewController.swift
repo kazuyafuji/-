@@ -9,11 +9,18 @@
 import UIKit
 
 class HowToViewController: UIViewController {
+    
+    @IBOutlet var back :UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        back.layer.borderColor = UIColor.black.cgColor
+        back.layer.borderWidth = 1.0
+        back.layer.cornerRadius = 15
+
     }
 
     override func didReceiveMemoryWarning() {

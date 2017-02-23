@@ -10,6 +10,10 @@ import UIKit
 
 class PlayViewController: UIViewController {
     
+    @IBOutlet var toHints :UIButton!
+    
+    @IBOutlet var tag :UILabel!
+    
     //viewの入れ子の作成
     @IBOutlet var setView : UIView!
     
@@ -21,6 +25,10 @@ class PlayViewController: UIViewController {
     var finish: Bool = false
     var lastNumber :Int = 10
     var countProblem :Int = 0
+    var wrongArray: [String] = ["犬","成","木","墨","日","竿","飲","両","面","八"]
+    var correctArray: [String] = ["大","城","禾","黒","田","干","飾","内","雨","入"]
+    var hint :Bool = false
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -36,39 +44,25 @@ class PlayViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
             count = 0.0
             finish = false  //もう一度やる時のために戻しておく
+            NSLog("countProblemは%d", countProblem)
         }
         
-        //ボタンを複数個設置
-        number = Int(arc4random_uniform(9))
-        NSLog("numberの値は%dです", number)
-        
-        for n in 0...2 {
+        if hint == false{
             
-            //for文の入れ子
-            for i in 0...2 {
-                
-                let button = UIButton()
-                button.layer.anchorPoint = CGPoint.zero
-                button.frame = CGRect(x: 0,y: 0, width: 100, height: 100)
-                button.layer.position = CGPoint(x: 100*i, y: 100*n)
-                button.tag = i + n*3
-                self.setView.addSubview(button)
-                
-                let tag: Int = button.tag
-                
-                if tag == number {
-                    button.setTitle("大", for: .normal)
-                    button.setTitleColor(UIColor.black, for: .normal)
-                    button.addTarget(self, action: #selector(PlayViewController.answerTapped), for:.touchUpInside)
-                    
-                } else {
-                    button.setTitle("犬", for: .normal)
-                    button.setTitleColor(UIColor.black, for: .normal)
-                    button.addTarget(self, action: #selector(PlayViewController.wrongTapped), for:.touchUpInside)
-                    
-                }
-            }
+            self.addButton()
+            countProblem = countProblem + 1
+            
+            //何問目かを表示する
+            tag.text = "第"+String(countProblem)+"問"
+            
+        }else if hint == true {
+            hint = false
         }
+        
+        toHints.layer.borderColor = UIColor.black.cgColor
+        toHints.layer.borderWidth = 1.0
+        toHints.layer.cornerRadius = 15
+
         
     }
     
@@ -104,6 +98,7 @@ class PlayViewController: UIViewController {
     @IBAction func toHint() {
         performSegue(withIdentifier: "toHint", sender: nil)
         timer.invalidate()
+        hint = true
     }
     
     func answerTapped() {
@@ -113,23 +108,37 @@ class PlayViewController: UIViewController {
             subview.removeFromSuperview()
         }
         
+        
         //結果画面へ移動
-        if countProblem > 10 {
+        if countProblem > 9 {
             performSegue(withIdentifier: "toResult", sender: nil)
+            
+            //タイマーを止めてfinishをtrue
+            timer.invalidate()
+            finish = true
+            
             countProblem = 0
+            
+            hint = false
+        } else if  countProblem <= 9 {
+            self.addButton()
+            countProblem = countProblem + 1
+            
+            //何問目かを表示する
+            tag.text = "第"+String(countProblem)+"問"
+            
+            hint = false
+            
         }
         
-        //タイマーを止めてfinishをtrue
-        timer.invalidate()
-        finish = true
-        
-        countProblem = countProblem + 1
-        
+       
+
     }
     
     func wrongTapped() {
         timer.invalidate()
         finish = false
+        hint = false
         
         //間違いのアラートを表示
         let alert:UIAlertController = UIAlertController(title: "不正解", message: "", preferredStyle: .alert)
@@ -149,6 +158,7 @@ class PlayViewController: UIViewController {
             UIAlertAction(title: "ヒントへ", style: UIAlertActionStyle.default,
                           handler: { action in
                             self.performSegue(withIdentifier: "toHint", sender: nil)
+                            self.hint  = true
             }
             )
             
@@ -158,6 +168,41 @@ class PlayViewController: UIViewController {
         present(alert, animated: true, completion:  nil)
         
         
+        
+    }
+    
+    func addButton() {
+        //ボタンを複数個設置
+        number = Int(arc4random_uniform(9))
+        NSLog("numberの値は%dです", number)
+        
+        for n in 0...2 {
+            
+            //for文の入れ子
+            for i in 0...2 {
+                
+                let button = UIButton()
+                button.layer.anchorPoint = CGPoint.zero
+                button.frame = CGRect(x: 0,y: 0, width: 100, height: 100)
+                button.layer.position = CGPoint(x: 100*i, y: 100*n)
+                button.tag = i + n*3
+                self.setView.addSubview(button)
+                
+                let tag: Int = button.tag
+                
+                if tag == number {
+                    button.setTitle(correctArray[countProblem], for: .normal)
+                    button.setTitleColor(UIColor.black, for: .normal)
+                    button.addTarget(self, action: #selector(PlayViewController.answerTapped), for:.touchUpInside)
+                    
+                } else {
+                    button.setTitle(wrongArray[countProblem], for: .normal)
+                    button.setTitleColor(UIColor.black, for: .normal)
+                    button.addTarget(self, action: #selector(PlayViewController.wrongTapped), for:.touchUpInside)
+                    
+                }
+            }
+        }
         
     }
     

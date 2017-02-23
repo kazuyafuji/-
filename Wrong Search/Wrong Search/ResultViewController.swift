@@ -10,6 +10,9 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    @IBOutlet var onemore: UIButton!
+    @IBOutlet var home:UIButton!
+    
     @IBOutlet var resultSecond: UILabel!
     @IBOutlet var resultLevel: UILabel!
     @IBOutlet var resultMemo: UITextView!
@@ -38,6 +41,14 @@ class ResultViewController: UIViewController {
             resultLevel.text = "Cランク..."
             resultMemo.text = "Bランク目指して頑張ろう!"
         }
+        
+        onemore.layer.borderColor = UIColor.black.cgColor
+        onemore.layer.borderWidth = 1.0
+        onemore.layer.cornerRadius = 15
+        home.layer.borderColor = UIColor.black.cgColor
+        home.layer.borderWidth = 1.0
+        home.layer.cornerRadius = 15
+
         
         // Do any additional setup after loading the view.
         

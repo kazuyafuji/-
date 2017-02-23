@@ -9,11 +9,24 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet var start : UIButton!
+    @IBOutlet var howTo: UIButton!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        start.layer.borderColor = UIColor.black.cgColor
+        start.layer.borderWidth = 1.0
+        start.layer.cornerRadius = 15
+        
+        howTo.layer.borderColor = UIColor.black.cgColor
+        howTo.layer.borderWidth = 1.0
+        howTo.layer.cornerRadius = 15
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,11 +10,18 @@ import UIKit
 
 class HintViewController: UIViewController {
     
+    @IBOutlet var backback :UIButton!
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        backback.layer.borderColor = UIColor.black.cgColor
+        backback.layer.borderWidth = 1.0
+        backback.layer.cornerRadius = 15
+
     }
 
     override func didReceiveMemoryWarning() {
