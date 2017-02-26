@@ -11,6 +11,7 @@ import UIKit
 class HowToViewController: UIViewController {
     
     @IBOutlet var back :UIButton!
+    @IBOutlet var hint : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,11 @@ class HowToViewController: UIViewController {
         back.layer.borderColor = UIColor.black.cgColor
         back.layer.borderWidth = 1.0
         back.layer.cornerRadius = 15
+        
+        hint.layer.borderColor = UIColor.black.cgColor
+        hint.layer.borderWidth = 1.0
+        hint.layer.cornerRadius = 15
+
 
     }
 

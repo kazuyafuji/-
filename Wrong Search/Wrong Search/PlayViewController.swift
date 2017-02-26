@@ -54,6 +54,8 @@ class PlayViewController: UIViewController {
             
             //何問目かを表示する
             tag.text = "第"+String(countProblem)+"問"
+            tag.textColor = UIColor.orange
+            tag.font = UIFont(name: "HiraginoSans-W6" ,size: 30)
             
         }else if hint == true {
             hint = false

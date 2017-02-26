@@ -28,10 +28,10 @@ class ResultViewController: UIViewController {
         resultSecond.text = text
         let sendtext = Double(sendText)!
         
-        if sendtext <= 20.00 {
+        if sendtext <= 22.00 {
             resultLevel.text = "Sランク！！"
             resultMemo.text = "すごすぎる！神様レベル！"
-        } else if sendtext <= 30.00 {
+        } else if sendtext <= 33.00 {
             resultLevel.text = "Aランク!"
             resultMemo.text = "天才！"
         } else if sendtext <= 45.00 {
