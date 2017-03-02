@@ -10,6 +10,12 @@ import UIKit
 
 class HowToViewController: UIViewController {
     
+    @IBOutlet var sentence1 : UITextField!
+    @IBOutlet var sentence2 : UITextField!
+    @IBOutlet var sentence3 : UITextField!
+    @IBOutlet var sentence4 : UITextField!
+
+    
     @IBOutlet var back :UIButton!
     @IBOutlet var hint : UILabel!
 
@@ -18,6 +24,11 @@ class HowToViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        sentence1.isEnabled = false
+        sentence2.isEnabled = false
+        sentence3.isEnabled = false
+        sentence4.isEnabled = false
+
         back.layer.borderColor = UIColor.black.cgColor
         back.layer.borderWidth = 1.0
         back.layer.cornerRadius = 15

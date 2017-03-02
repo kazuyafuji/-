@@ -10,6 +10,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    @IBOutlet var whiteview : UIView!
+    
     @IBOutlet var onemore: UIButton!
     @IBOutlet var toHome:UIButton!
     
@@ -24,6 +26,10 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        whiteview.backgroundColor = UIColor.white
+        
+        resultMemo.isEditable = false
         let text = sendText + "秒"
         resultSecond.text = text
         let sendtext = Double(sendText)!
@@ -48,7 +54,7 @@ class ResultViewController: UIViewController {
         toHome.layer.borderColor = UIColor.black.cgColor
         toHome.layer.borderWidth = 1.0
         toHome.layer.cornerRadius = 15
-
+        
         
         // Do any additional setup after loading the view.
         

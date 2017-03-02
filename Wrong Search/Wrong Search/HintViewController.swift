@@ -10,6 +10,8 @@ import UIKit
 
 class HintViewController: UIViewController {
     
+    @IBOutlet var sentence : UITextView!
+    
     @IBOutlet var backback :UIButton!
     @IBOutlet var textView :UITextView!
     
@@ -21,6 +23,8 @@ class HintViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        sentence.isEditable = false
         
         backback.layer.borderColor = UIColor.black.cgColor
         backback.layer.borderWidth = 1.0

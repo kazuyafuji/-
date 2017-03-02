@@ -20,6 +20,7 @@
 		C55C36CC1E62913A007E12C3 /* 表.png in Resources */ = {isa = PBXBuildFile; fileRef = C55C36C11E62913A007E12C3 /* 表.png */; };
 		C55C36CE1E629AA3007E12C3 /* スクリーンショット 2017-02-26 14.09.07.png in Resources */ = {isa = PBXBuildFile; fileRef = C55C36CD1E629AA3007E12C3 /* スクリーンショット 2017-02-26 14.09.07.png */; };
 		C55C36D01E629CA1007E12C3 /* 新表.png in Resources */ = {isa = PBXBuildFile; fileRef = C55C36CF1E629CA1007E12C3 /* 新表.png */; };
+		C55C36D21E6842C1007E12C3 /* 表表.png in Resources */ = {isa = PBXBuildFile; fileRef = C55C36D11E6842C1007E12C3 /* 表表.png */; };
 		C58990B61E27912800B27FEE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990B51E27912800B27FEE /* HomeViewController.swift */; };
 		C58990B81E27913E00B27FEE /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990B71E27913E00B27FEE /* HowToViewController.swift */; };
 		C58990BA1E27914B00B27FEE /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58990B91E27914B00B27FEE /* PlayViewController.swift */; };
@@ -65,6 +66,7 @@
 		C55C36C11E62913A007E12C3 /* 表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表.png"; sourceTree = "<group>"; };
 		C55C36CD1E629AA3007E12C3 /* スクリーンショット 2017-02-26 14.09.07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2017-02-26 14.09.07.png"; sourceTree = "<group>"; };
 		C55C36CF1E629CA1007E12C3 /* 新表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新表.png"; sourceTree = "<group>"; };
+		C55C36D11E6842C1007E12C3 /* 表表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表表.png"; sourceTree = "<group>"; };
 		C58990B51E27912800B27FEE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C58990B71E27913E00B27FEE /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
 		C58990B91E27914B00B27FEE /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		C55C36B61E62913A007E12C3 /* 道具 */ = {
 			isa = PBXGroup;
 			children = (
+				C55C36D11E6842C1007E12C3 /* 表表.png */,
 				C55C36CF1E629CA1007E12C3 /* 新表.png */,
 				C55C36CD1E629AA3007E12C3 /* スクリーンショット 2017-02-26 14.09.07.png */,
 				C55C36B71E62913A007E12C3 /* スクリーンショット 2016-12-15 20.13.12.png */,
@@ -311,6 +314,7 @@
 				C5BBDCEE1E1F12F700199D30 /* Main.storyboard in Resources */,
 				C55C36CB1E62913A007E12C3 /* 表.pdf in Resources */,
 				C55C36CA1E62913A007E12C3 /* 背表紙.png in Resources */,
+				C55C36D21E6842C1007E12C3 /* 表表.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
